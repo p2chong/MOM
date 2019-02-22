@@ -1,0 +1,278 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	overflow: visible;
+}
+
+
+	div.income{
+	position: absolute;
+	left: 35%;
+	top: 10%;
+}
+
+.income p{
+	font-size: 5em;
+	text-align: center;
+}
+
+div.trips{
+	position: absolute;
+	left: 28%;
+	top: 20%;
+}
+
+.trips p{
+	font-size: 3em;
+	padding-bottom: 20px;
+}
+
+
+.myProgress{
+	width: 100%;
+	background-color: grey;
+}
+
+.myBar1{
+	width: 70%;
+	height: 30px;
+	background-color: black;
+}
+
+.myBar2{
+	width: 25%;
+	height: 30px;
+	background-color: black;
+}
+
+.myBar3{
+	width: 20%;
+	height: 30px;
+	background-color: black;
+}
+
+.space{
+	padding-bottom: 100px;
+}
+
+div.reminders{
+	position: absolute;
+	left: 27%;
+	top: 50%;
+}
+
+.reminders p{
+	font-size: 4em;
+}
+
+
+div.payments{
+	position: absolute;
+	left: 32%;
+	top: 55%;
+}
+
+.payments p{
+	font-size: 3em;
+}
+
+#popup_button{
+	position: absolute;
+	left: 30%;
+	top: 70%;
+	font-size: 4em;
+}
+#popup_button_wages{
+	position: absolute;
+	left: 24%;
+	top: 70%;
+	font-size: 4em;
+}
+
+#home-button{
+	position: absolute;
+	background-color: #555;
+	left: 30%;
+	top: 100%;
+	font-size: 4em;
+}
+/*.buttonsHome{
+	position: absolute;
+	bottom: 0;
+}
+.buttonsHome button{
+	font-size: 4em;
+}*/
+
+
+
+
+#back{
+	width: 5em;
+}
+#home{
+	width: 5em;
+}
+#settings{
+	width:5.1em;
+}
+
+button.accordion{
+	font-size: 3em;
+  border:none;
+  outline:none;
+  text-align:left;
+  background-color:transparent;
+  padding:8px;
+  margin:4px 0;
+  border-radius:4px;
+  transition:0.3s;
+}
+
+button.accordion.active{
+  border-radius:4px 4px 0 0;
+  margin:4px 0 0;
+ }
+
+div.panel{
+	font-size: 2em;
+  border-radius:0 0 4px 4px;
+  overflow:hidden;
+  opacity:0;
+  max-height:0;
+  transition:0.3s;
+  padding:0 8px;
+  margin:0;
+}
+
+div.panel.show{
+  opacity:1;
+  max-height:500px;
+  padding:8px;
+  margin:2px 0 4px;
+}
+
+/*h1{
+	position: absolute;
+	left: 35%;
+	top: 10%;
+}*/
+#add-goal{
+	position: absolute;
+	left: 37%;
+	top: 70%;
+	font-size: 4em;
+}
+
+.login{
+	font-size: 3em;
+	position: absolute;
+	top: 40%;
+	left: 28%;
+	width: 30%;
+	border: 3em;
+}
+p.login{
+	top:35%;
+	left:28%;
+}
+
+input[type="email"] {
+  font-size: 1em;
+}
+input[type="password"] {
+  font-size: 1em;
+}
+input[type="submit"] {
+  font-size: 1em;
+}
+
+.sign-up{
+	font-size: 3em;
+	position: absolute;
+	top: 40%;
+	left: 28%;
+	width: 30%;
+	border: 3em;
+}
+p.sign-up{
+	top:35%;
+	left:28%;
+}
+
+#savings{
+	position: relative;
+	font-size: 3em;
+	left: 17%;
+}
+
+.login a{
+	font-size: : 1em;
+	color: black;
+}
+
+
+.sign-up a{
+	font-size: 1em;
+	color: black;
+}
+
+.btn-xl{
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width:30%;
+    height: 100px;
+
+}
+
+
+.content {
+  position: relative;
+  font-size: 5em;  
+}
+#home_button {
+  position: absolute;
+  bottom: 0;
+  right: 35%;
+  font-size: 4em;
+  margin-bottom:10px;
+}
+#wages_button {
+  position: absolute;
+  bottom: 0;
+  right: 67%;
+  font-size: 4em;
+  margin-bottom:10px;
+}
+#savings_button {
+  position: absolute;
+  bottom: 0;
+  right: 3%;
+  font-size: 4em;
+  margin-bottom:10px;
+}
+#help_button {
+  position: absolute;
+  top: 0;
+  right: 0%;
+  font-size: 4em;
+  margin-bottom:10px;
+}
+
+#top_spacing{
+	margin-top: 100px;
+}
+#top_spacing2{
+	margin-top: 150px;
+}
+#top_spacing3{
+	margin-top: 200px;
+}
+#top_spacing4{
+	margin-top: 250px;
+}

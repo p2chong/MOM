@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	</head>
+
+	<body>
+		<p>Login</p>
+		{{#if successMessage}}<p>{{successMessage}}</p>{{/if}}
+		<form action = "/login/login" method = "post">
+			<input type = "email" id = "email" name = "email" placeholder = "Enter Email"/>
+			<input type = "password" id = "password" name = "password" placeholder = " Enter Password"/>
+			<br>
+			<input type = "submit" id = "submit" name = "submit"/>
+			<p>Don't have an account? <a href = "../users/signup">Sign Up</a></p>
+		</form>
+	</body>
+</html>

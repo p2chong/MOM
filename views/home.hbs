@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link href = "../stylesheets/style.css" rel = "stylesheet"/>
+		<link href = "../stylesheets/popup_stylesheet.css" rel = "stylesheet"/>
+		<link href = "../stylesheets/bootstrap.css" rel = "stylesheet"/>
+	</head>
+
+	<body>
+		<div class="text-center">
+			<h1 class = "display-1"  id = "top_spacing">Home</h1>
+			<h2 class = "display-5" id = "top_spacing">Your disposable income is</h2>
+			<p class = "display-1" >$100</p>
+		</div>
+
+		<div class = "trips">
+			{{#each req.user.purchases}}
+			{{#if purchase_name}}<p>{{purchase_name}} ${{cost}}</p>{{/if}}
+			{{/each}}
+		</div>
+		<form action = '/users/logout' method = 'post'>
+			<button>Log Out</button>
+		</form>
+
+		<button type = "button" id = "popup_button" class="open-button" onclick="openForm()">New Purchase</button>
+
+		<div class="form-popup" id="myForm">
+		  <form action = "/users/home"  class="form-container" method = "post">
+
+		    <label for="new_purchase"><b>New Purchase</b></label>
+		    <input type="text" placeholder="Enter your new purchase" name="new_purchase" required>
+
+		    <label for="cost"><b>Cost</b></label>
+		    <input type="text" placeholder="Enter Cost" name="cost" required>
+
+		    <button type="submit" class="btn">Add New Purchase</button>
+		    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		  </form>
+		</div>
+		<div class = "button">
+			<a href = "../users/home" class = "btn btn-primary btn-xl" id = "home_button" role = "button">Home</a>
+			<a href = "../wages/wages" class = "btn btn-primary btn-xl" id = "wages_button" role = "button">Wages</a>
+			<a href = "../savings/savings" class = "btn btn-primary btn-xl" id = "savings_button" role = "button">Savings</a>
+			<a href = "../help/help" class = "btn btn-primary" id = "help_button" role = "button">Help</a>
+		</div>
+		<script src = "../javascripts/popup.js"></script>
+	</body>
+</html
