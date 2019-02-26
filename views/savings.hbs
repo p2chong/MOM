@@ -13,22 +13,11 @@
 			<h1 class = "display-1"  id = "top_spacing">Savings Goals</h1>
 		</div>
 		<div class = "trips">
-			<p>Hawaii Trip $1200/$1600</p>
-			<div class = "myProgress">
-				<div class = "myBar1"></div>
-			</div>
-			<div class = "space"></div>
-			<p>Used Car $4500/$12000</p>
-			<div class = "myProgress">
-				<div class = "myBar2"></div>
-			</div>
-			<div class = "space"></div>
-			<p>Student Loan $6000/$36000</p>
-			<div class = "myProgress">
-				<div class = "myBar3"></div>
-			</div>
+			{{#each savings}}
+			{{#if savings_goal}}<p>Goal:{{savings_goal}}Cost:{{cost}}Deadline:{{deadline}}</p>{{/if}}
+			{{/each}}
 		</div>
-			<button type = "button" id = "add-goal" class="open-button" onclick="openForm()"> Add Goal</button>
+		<button type = "button" id = "add-goal" class="open-button" onclick="openForm()"> Add Goal</button>
 
 		<div class="form-popup" id="myForm">
 		  <form  class="form-container" action = "/savings/addGoal" method = "post">

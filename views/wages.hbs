@@ -13,6 +13,12 @@
 			<h1 class = "display-1"  id = "top_spacing">Wages</h1>
 		</div>
 
+		<div class = "trips">
+			{{#each expenditures}}
+			{{#if expenditure_name}}<p>Expenditure:{{expenditure_name}} Cost: ${{cost}}</p>{{/if}}
+			{{/each}}
+		</div>
+
 		<button type = "buttons" id = "popup_button_wages" class="open-button"  onclick="openForm()">Add Expenditure</button>
 
 		<div class="form-popup" id="myForm">

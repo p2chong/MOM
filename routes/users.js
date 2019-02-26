@@ -13,7 +13,7 @@ var User = info.User;
 var Purchase = info.Purchase;
 
 //Home Page
-router.get('/home',ensureAuthenticated,(req,res) => res.render('home',req.user.purchases));
+router.get('/home',ensureAuthenticated,(req,res) => res.render('home',{'purchases': req.user.purchases}));
 
 //Sign Up Page
 router.get('/signup', function(req, res, next) {
@@ -102,15 +102,11 @@ router.post('/logout',(req,res) => {
 router.post('/home', (req,res) => {
 	var purchase = req.body.new_purchase;
 	var cost = req.body.cost;
-	console.log(purchase);
-	console.log(cost);
 	var currentUser = req.user;
 	var addPurchase = {'purchase_name': purchase, 'cost': cost};
 	currentUser.purchases.push(addPurchase);
 	currentUser.save();
-	console.log(currentUser.purchases.length);
-	console.log(currentUser.purchases);
-	res.render('home',req.user.purchases);
+	res.render('home',{'purchases': req.user.purchases});
 });
 
 module.exports = router;

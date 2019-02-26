@@ -4,7 +4,7 @@ var {ensureAuthenticated} = require('../config/auth');
 
 /* GET home page. */
 router.get('/savings',ensureAuthenticated, function(req, res, next) {
-  res.render('savings');
+  res.render('savings',{'savings': req.user.savings});
 });
 
 router.post('/addGoal', (req,res) => {
@@ -20,7 +20,7 @@ router.post('/addGoal', (req,res) => {
 	currentUser.save();
 	console.log(currentUser.savings.length);
 	console.log(currentUser.savings[0].savings_goal);
-	res.render('savings');
+	res.render('savings',{'savings': req.user.savings});
 });
 
 module.exports = router;

@@ -16,8 +16,8 @@
 		</div>
 
 		<div class = "trips">
-			{{#each req.user.purchases}}
-			{{#if purchase_name}}<p>{{purchase_name}} ${{cost}}</p>{{/if}}
+			{{#each purchases}}
+			{{#if purchase_name}}<p>Purchase:{{purchase_name}} Cost: ${{cost}}</p>{{/if}}
 			{{/each}}
 		</div>
 		<form action = '/users/logout' method = 'post'>
