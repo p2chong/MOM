@@ -82,9 +82,9 @@ div.payments{
 
 #popup_button{
 	position: absolute;
-	left: 30%;
-	top: 70%;
-	font-size: 4em;
+	left: 0%;
+	top: 85%;
+	font-size: 5em;
 }
 #popup_button_wages{
 	position: absolute;
