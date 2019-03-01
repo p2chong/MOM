@@ -32,33 +32,6 @@ div.trips{
 }
 
 
-.myProgress{
-	width: 100%;
-	background-color: grey;
-}
-
-.myBar1{
-	width: 70%;
-	height: 30px;
-	background-color: black;
-}
-
-.myBar2{
-	width: 25%;
-	height: 30px;
-	background-color: black;
-}
-
-.myBar3{
-	width: 20%;
-	height: 30px;
-	background-color: black;
-}
-
-.space{
-	padding-bottom: 100px;
-}
-
 div.reminders{
 	position: absolute;
 	left: 27%;
@@ -210,16 +183,7 @@ p.sign-up{
 	left: 17%;
 }
 
-.login a{
-	font-size: : 1em;
-	color: black;
-}
 
-
-.sign-up a{
-	font-size: 1em;
-	color: black;
-}
 
 .btn-xl{
     padding: 10px 20px;

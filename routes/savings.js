@@ -12,14 +12,22 @@ router.post('/addGoal', (req,res) => {
 	var newGoal = req.body.new_goal;
 	var cost = req.body.cost;
 	var deadline = req.body.deadline;
-	console.log(newGoal);
-	console.log(cost);
-	console.log(deadline);
 	var addNewGoal = {'savings_goal': newGoal, 'cost': cost, 'deadline': deadline};
 	currentUser.savings.push(addNewGoal);
 	currentUser.save();
-	console.log(currentUser.savings.length);
-	console.log(currentUser.savings[0].savings_goal);
+	res.render('savings',{'savings': req.user.savings});
+});
+
+router.post('/deleteGoal', (req,res) => {
+	console.log(req.body.id);
+	var currentUser = req.user;
+	for(var index = 0; index < currentUser.savings.length; index++){
+		if(currentUser.savings[index].id === req.body.id){
+			currentUser.savings.splice(index,1);
+			break;
+		}
+	}
+	currentUser.save();
 	res.render('savings',{'savings': req.user.savings});
 });
 

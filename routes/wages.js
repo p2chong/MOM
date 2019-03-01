@@ -20,4 +20,17 @@ router.post('/addExpenditure',(req,res) => {
 	res.render('wages',{'expenditures': req.user.expenditures});
 });
 
+router.post('/deleteExpenditure', (req,res) => {
+	console.log(req.body.id);
+	var currentUser = req.user;
+	for(var index = 0; index < currentUser.expenditures.length; index++){
+		if(currentUser.expenditures[index].id === req.body.id){
+			currentUser.expenditures.splice(index,1);
+			break;
+		}
+	}
+	currentUser.save();
+	res.render('wages',{'expenditures': req.user.expenditures});
+});
+
 module.exports = router;

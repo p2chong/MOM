@@ -109,4 +109,17 @@ router.post('/home', (req,res) => {
 	res.render('home',{'purchases': req.user.purchases});
 });
 
+router.post('/delete', (req,res) => {
+	console.log(req.body.id);
+	var currentUser = req.user;
+	for(var index = 0; index < currentUser.purchases.length; index++){
+		if(currentUser.purchases[index].id === req.body.id){
+			currentUser.purchases.splice(index,1);
+			break;
+		}
+	}
+	currentUser.save();
+	res.render('home',{'purchases': req.user.purchases});
+});
+
 module.exports = router;

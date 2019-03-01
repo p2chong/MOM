@@ -16,6 +16,11 @@
 		<div class = "trips">
 			{{#each expenditures}}
 			{{#if expenditure_name}}<p>Expenditure:{{expenditure_name}} Cost: ${{cost}}</p>{{/if}}
+			{{#if expenditure_name}}<form action = '/wages/deleteExpenditure' method = 'post'>
+				<label for="delete_purchase"><b></b></label>
+				<input type = "hidden" name = 'id' value = "{{id}}">
+				<input type = 'submit' value = 'Delete Entry'>
+			</form>{{/if}}
 			{{/each}}
 		</div>
 
