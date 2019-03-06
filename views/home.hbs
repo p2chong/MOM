@@ -5,31 +5,44 @@
 	<head>
 		<link href = "../stylesheets/style.css" rel = "stylesheet"/>
 		<link href = "../stylesheets/popup_stylesheet.css" rel = "stylesheet"/>
-		<link href = "../stylesheets/bootstrap.css" rel = "stylesheet"/>
+		<link href = "../stylesheets/styleTwo.css" rel = "stylesheet"/>
+		<!-- Google Analytics -->
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-135652732-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+		<!-- End Google Analytics -->
 	</head>
 
 	<body>
-		<div class="text-center">
-			<h1 class = "display-1"  id = "top_spacing">Home</h1>
-			<h2 class = "display-5" id = "top_spacing">Your disposable income is</h2>
-			<p class = "display-1" >$100</p>
+		<div class = "w3-top">
+			<form action = '/users/logout' method = 'post'>
+				<button class = "w3-button w3-large w3-teal">Log Out</button>
+			</form>
+			<a href = "../help/help" class = "" id = "help_button" role = "button"><button class = "w3-button w3-large w3-teal w3-display-topright">Help</button></a>
 		</div>
-
-		<div class = "trips">
-			{{#each purchases}}
-			{{#if purchase_name}}<p>Purchase:{{purchase_name}} Cost: ${{cost}}</p>{{/if}}
-			{{#if purchase_name}}<form action = '/users/delete' method = 'post'>
-				<label for="delete_purchase"><b></b></label>
-				<input type = "hidden" name = 'id' value = "{{id}}">
-				<input type = 'submit' value = 'Delete Entry'>
-			</form>{{/if}}
-			{{/each}}
+		<div class="w3-content" style="max-width:1100px;margin-top:50px;margin-bottom:60px">
+			<div class = "w3-panel w3-center">
+				<h1 class = ""  id = "top_spacing">Home</h1>
+				<h2 class = "" id = "top_spacing">Your disposable income is</h2>
+				<p id = "money-available" >$100</p>
+				<div class = "w3-container trips scroll-area">
+					{{#each purchases}}
+					{{#if purchase_name}}<p>Purchase:{{purchase_name}} Cost: ${{cost}}</p>{{/if}}
+					{{#if purchase_name}}<form action = '/users/delete_purchase' method = 'post'>
+					<label for="delete_purchase"><b></b></label>
+					<input type = "hidden" name = 'id' value = "{{id}}">
+					<input type = 'submit' class = "w3-button" value = 'Delete Entry'>
+					</form>{{/if}}
+					{{/each}}
+				</div>
+			</div>
 		</div>
-		<form action = '/users/logout' method = 'post'>
-			<button>Log Out</button>
-		</form>
-
-		<button type = "button" id = "popup_button" class="open-button btn-block" onclick="openForm()">New Purchase</button>
 
 		<div class="form-popup" id="myForm">
 		  <form action = "/users/home"  class="form-container" method = "post">
@@ -44,11 +57,21 @@
 		    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
 		  </form>
 		</div>
-		<div class = "button">
-			<a href = "../users/home" class = "btn btn-primary btn-xl" id = "home_button" role = "button">Home</a>
-			<a href = "../wages/wages" class = "btn btn-primary btn-xl" id = "wages_button" role = "button">Wages</a>
-			<a href = "../savings/savings" class = "btn btn-primary btn-xl" id = "savings_button" role = "button">Goals</a>
-			<a href = "../help/help" class = "btn btn-primary" id = "help_button" role = "button">Help</a>
+		<div class = "w3-bottom">
+			<div class = "w3-center w3-xxlarge log-info">
+				<button type = "button" id = "popup_button" class="open-button btn-block" onclick="openForm()">New Purchase</button>
+			</div>
+			<div class = "w3-row w3-light-green w3-padding-large menu">
+				<div class = "w3-third s12">
+					<a href = "../wages/wages" class = "w3-btn w3-block" id = "home_button" role = "button">Wages</a>
+				</div>
+				<div class = "w3-third s12">
+					<a href = "../users/home" class = "w3-btn w3-block" id = "wages_button" role = "button">Home</a>
+				</div>
+				<div class = "w3-third s12">
+					<a href = "../savings/savings" class = "w3-btn w3-block" id = "savings_button" role = "button">Goals</a>
+				</div>
+			</div>
 		</div>
 		<script src = "../javascripts/popup.js"></script>
 	</body>

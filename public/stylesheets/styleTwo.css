@@ -1,0 +1,34 @@
+.menu{
+	font-size: 2.5em;
+}
+
+#help{
+	font-size: 2.5em;
+}
+
+h1{
+	font-size: 3em;
+	text-align: center;
+}
+
+#money-available{
+	font-size: 2em;
+	text-align: center;
+}
+
+.scroll-area{
+	overflow: auto;
+}
+
+.trips p{
+	font-size: 1.5em;
+	margin-top: 1em;
+}
+
+.purchase{
+	left: 50%;
+}
+
+.log-info{
+	margin-bottom: 1em;
+}

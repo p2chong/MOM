@@ -15,6 +15,8 @@ var Purchase = info.Purchase;
 //Home Page
 router.get('/home',ensureAuthenticated,(req,res) => res.render('home',{'purchases': req.user.purchases}));
 
+
+
 //Sign Up Page
 router.get('/signup', function(req, res, next) {
   res.render('signup');
@@ -109,7 +111,7 @@ router.post('/home', (req,res) => {
 	res.render('home',{'purchases': req.user.purchases});
 });
 
-router.post('/delete', (req,res) => {
+router.post('/delete_purchase', (req,res) => {
 	console.log(req.body.id);
 	var currentUser = req.user;
 	for(var index = 0; index < currentUser.purchases.length; index++){
